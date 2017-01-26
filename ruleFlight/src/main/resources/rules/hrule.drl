@@ -1,0 +1,64 @@
+package com.redhat.flight.rules
+
+
+declare Customer
+    frequent: boolean
+    flight: Flight
+    reduction: int
+end
+
+declare  Flight
+    region : String
+    airport : String
+    state : String
+    world : String
+    city : String
+    country : String
+    matchMap : java.util.HashMap
+end
+
+function void addMatch( Flight k, String keywordName, int levelOfMatch ) {
+    if (k.getMatchMap() == null) k.setMatchMap(new java.util.HashMap<String,Integer>());
+        k.getMatchMap().put(keywordName,levelOfMatch);
+}
+
+
+rule "MKT1"
+when
+     Flight("MKT1" not memberOf matchMap, airport == "LIL" , lom : 1, myk: this )
+   or  Flight("MKT1" not memberOf matchMap, airport == "CDG" , lom : 1, myk: this )
+   or Flight("MKT1" not memberOf matchMap, region == "EUROP" , city != "PAR" , city != "LYO" , city != "NCE" , city != "LIL" , city != "LIS" , lom : 5, myk: this)
+  
+then
+        addMatch(myk, "MKT1", lom);
+        update(myk);  
+end
+
+rule "MKT2"
+when
+     Flight("MKT2" not memberOf matchMap, airport == "NICE" , lom : 1, myk: this )
+   or  Flight("MKT2" not memberOf matchMap, airport == "CDG" , lom : 1, myk: this )
+   or Flight("MKT2" not memberOf matchMap, region == "EUROP" , city != "PAR" , city != "LYO" , city != "NCE" , city != "LIL" , city != "LIS" , lom : 5, myk: this)
+  
+then
+        addMatch(myk, "MKT2", lom);
+        update(myk);  
+end
+
+
+
+
+rule "ruleUsingMkt"
+
+when
+    c : Customer( frequent == true )
+    Flight( "MKT1" memberOf matchMap ) from c.flight // if you remove from it works!
+then
+   //for version 1.0.0 set reduction to 12
+     //c.setReduction(12);
+    //for version 2.0.0 set reduction to 13
+    c.setReduction(13);
+end
+
+
+

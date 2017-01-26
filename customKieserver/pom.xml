@@ -1,0 +1,146 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.redhat.rule.kieserver</groupId>
+	<artifactId>customKieserver</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+
+	<distributionManagement>
+		<repository>
+			<id>release</id>
+			<name>Internal Releases</name>
+			<url>http://localhost:8081/nexus/content/repositories/bpmshosted/</url>
+		</repository>
+		<snapshotRepository>
+			<id>deployment</id>
+			<name>Internal Releases</name>
+			<url>http://localhost:8081/nexus/content/repositories/bpmshosted/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+
+	<properties>
+		<version.org.kie>7.0.0-SNAPSHOT</version.org.kie>
+		<junit.version>4.11</junit.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<version.org.jboss.resteasy>3.0.16.Final</version.org.jboss.resteasy>
+		<version.sl4j>1.7.7</version.sl4j>
+		<version.org.apache.maven>3.2.5</version.org.apache.maven>
+
+	</properties>
+
+
+	<dependencies>
+		<!-- core deps -->
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-api</artifactId>
+			<version>${version.org.kie}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-internal</artifactId>
+			<version>${version.org.kie}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.kie.server</groupId>
+			<artifactId>kie-server-api</artifactId>
+			<version>${version.org.kie}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kie.server</groupId>
+			<artifactId>kie-server-services-common</artifactId>
+			<version>${version.org.kie}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kie.server</groupId>
+			<artifactId>kie-server-services-drools</artifactId>
+			<version>${version.org.kie}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-core</artifactId>
+			<version>${version.org.kie}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-compiler</artifactId>
+			<version>${version.org.kie}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.kie.server</groupId>
+			<artifactId>kie-server-client</artifactId>
+			<version>${version.org.kie}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kie.server</groupId>
+			<artifactId>kie-server-api</artifactId>
+			<version>${version.org.kie}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.kie.server</groupId>
+			<artifactId>kie-server-controller-api</artifactId>
+			<version>${version.org.kie}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kie.server</groupId>
+			<artifactId>kie-server-controller-impl</artifactId>
+			<version>${version.org.kie}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kie.server</groupId>
+			<artifactId>kie-server-controller-rest</artifactId>
+			<version>${version.org.kie}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.kie.server</groupId>
+			<artifactId>kie-server-router-client</artifactId>
+			<version>${version.org.kie}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kie.server</groupId>
+			<artifactId>kie-server-router-proxy</artifactId>
+			<version>${version.org.kie}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-jdk14</artifactId>
+			<version>${version.sl4j}</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-embedder</artifactId>
+			<version>${version.org.apache.maven}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-core</artifactId>
+			<version>${version.org.apache.maven}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>
