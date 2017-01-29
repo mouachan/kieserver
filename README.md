@@ -1,6 +1,5 @@
-# kieserver
-
 ## Custom kieserver PoC
+
 
 The project is organized as maven project, consisting of the following projects:
 
@@ -9,21 +8,21 @@ The project is organized as maven project, consisting of the following projects:
 
 
 ### Description
-Build 2 versions of kjar :
+</br>Build 2 versions of kjar :
 - version 1.0.0 : set the customer reduction to 12
 - version 2.0.0 : set the customer reduction to 13
 
-rule "ruleUsingMkt"
-
-when
-    c : Customer( frequent == true )
-    Flight( "MKT1" memberOf matchMap ) from c.flight // if you remove from it works!
-then
-   //for version 1.0.0 set reduction to 12
-     //c.setReduction(12);
-    //for version 2.0.0 set reduction to 13
-    c.setReduction(13);
-end
+</br>rule "ruleUsingMkt"
+</br>
+</br>when
+</br>    c : Customer( frequent == true )
+</br>    Flight( "MKT1" memberOf matchMap ) from c.flight // if you remove from it works!
+</br>then
+</br>   //for version 1.0.0 set reduction to 12
+</br>     //c.setReduction(12);
+</br>    //for version 2.0.0 set reduction to 13
+</br>    c.setReduction(13);
+</br>end
 
 When a container is created with a higher and an existing alias, kiserver will use the latest container version to run rules.    
 #### ruleFlight
@@ -61,3 +60,4 @@ Fact.java : a Generic fact
 
 Add an implemntation of protobuf and IPC transport
 Add a custom policy (to update and remove containers)  
+
