@@ -77,11 +77,6 @@
 			<artifactId>kie-server-client</artifactId>
 			<version>${version.org.kie}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.kie.server</groupId>
-			<artifactId>kie-server-api</artifactId>
-			<version>${version.org.kie}</version>
-		</dependency>
 
 		<dependency>
 			<groupId>org.kie.server</groupId>

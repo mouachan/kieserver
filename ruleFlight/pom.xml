@@ -13,7 +13,7 @@
 	<description>Drools flight rules generator project</description>
 
 	<properties>
-		<runtime.version>6.4.0.Final</runtime.version>
+		<runtime.version>6.5.0.Final</runtime.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -60,7 +60,7 @@
 			<plugin>
 				<groupId>org.kie</groupId>
 				<artifactId>kie-maven-plugin</artifactId>
-				<version>${runtime.version}</version>
+				<version>6.5.0.Final</version>
 				<extensions>true</extensions>
 			</plugin>
 			<plugin>
