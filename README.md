@@ -50,13 +50,13 @@ mvn clean install
 
 </br>*Fact.java* : a generic fact
 </br>*KieServerApi.java* : set up kieserver properties, instanciate a new kieserver, create/update containers using alias feature.
-</br>*CustomKieServerExtension.java* : implementation of kieserver extension based on drools extension (all other extension are disabled), that provides rules capabilities (inserting facts, fire rules), can be used to implement a new transport.
-</br>*CustomKieContainerCommandServiceImpl.java* : implementation of a custom serialization, a generic fact is mapped to the object using drools declared type api(reflection), each fact is inserted using InsertObjectCommand, the last command is a FireAllRulesCommand.
+</br>*CustomKieServerExtension.java* : implementation of kieserver extension based on drools (BRMS) extension (all other extension are disabled), that provides rules capabilities (inserting facts, fire rules), can be used to implement a new transport.
+</br>*CustomKieContainerCommandServiceImpl.java* : implementation of a custom serialization, a generic fact is mapped to an object using drools declared type api(reflection), each fact is inserted using InsertObjectCommand, the last command is a FireAllRulesCommand.
 </br>*KieServerApiTest.java* : assert that kieserver will use latest version using alias feature.  
 
 ### Next step
 
-</br>Implemntation of protobuf and IPC transport
+</br>Implementation of protobuf and IPC transport
 </br>Implementation of a custom policy (to update and remove containers)  
 
 ### Documentation
