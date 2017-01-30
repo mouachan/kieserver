@@ -13,17 +13,16 @@
 - version 2.0.0 : set the customer reduction to 13
 
 ```
-</br>*rule "ruleUsingMkt"
-</br>
-</br>when
-</br>    c : Customer( frequent == true )
-</br>    Flight( "MKT1" memberOf matchMap ) from c.flight // if you remove from it works!
-</br>then
-</br>   //for version 1.0.0 set reduction to 12
-</br>     //c.setReduction(12);
-</br>    //for version 2.0.0 set reduction to 13
-</br>    c.setReduction(13);
-</br>end*
+rule "ruleUsingMkt"
+when
+    c : Customer( frequent == true )
+    Flight( "MKT1" memberOf matchMap ) from c.flight // if you remove from it works!
+then
+    //for version 1.0.0 set reduction to 12
+    //c.setReduction(12);
+    //for version 2.0.0 set reduction to 13
+    c.setReduction(13);
+end
 ```
 
 #### ruleFlight
