@@ -12,7 +12,7 @@
 - version 1.0.0 : set the customer reduction to 12
 - version 2.0.0 : set the customer reduction to 13
 
-</br>rule "ruleUsingMkt"
+</br>*rule "ruleUsingMkt"
 </br>
 </br>when
 </br>    c : Customer( frequent == true )
@@ -22,7 +22,7 @@
 </br>     //c.setReduction(12);
 </br>    //for version 2.0.0 set reduction to 13
 </br>    c.setReduction(13);
-</br>end
+</br>end*
 
 #### ruleFlight
 </br>uncomment the line //c.setReduction(12); on src/main/resource/hrule.drl
